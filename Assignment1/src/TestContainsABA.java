@@ -28,6 +28,9 @@ public class TestContainsABA {
 		if (s.equals("aba"))
 			return true;
 		
+		if (s.startsWith("aba") || s.endsWith("aba"))
+			return true;
+		
 		if (s.charAt(0) == 'a' || s.charAt(0) == 'b' || s.charAt(s.length() - 1) == 'a' || s.charAt(s.length() - 1) == 'b')
 			return isContainsABA(s.substring(1)) || isContainsABA(s.substring(0, s.length() - 1));
 		
