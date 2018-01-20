@@ -3,7 +3,7 @@ public class TestDivisibleBy7 {
 
 	public static void main(String[] args) {
 		
-		// Check if there is argument when calling this program
+		// Check if the argument is valid when calling this program
 		if (args.length != 1 || !isInteger(args[0]))
 		{
 			System.err.println("Usage: java TestDivisibleBy7 28");
