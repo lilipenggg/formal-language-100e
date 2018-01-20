@@ -3,7 +3,7 @@ public class TestSumXY {
 
 public static void main(String[] args) {
 		
-		// Check if there is argument when calling this program
+		// Check if the argument is valid when calling this program
 		if (args.length != 1 || !isInteger(args[0]))
 		{
 			System.err.println("Usage: java TestSumXY 12");
@@ -19,16 +19,14 @@ public static void main(String[] args) {
 	
 	public static boolean isSumXY(int num)
 	{
+		System.out.println("Current Number: " + String.valueOf(num));
 		if (num < 17)
 			return false;
 		
-		if (num % 17 == 0 || num % 43 == 0 || num % (17 + 43) == 0)
+		if (num == 17 || num == 43 || num == 43 + 17)
 			return true;
 		
-		if (num == 17 || num == 43)
-			return true;
-		
-		return false;
+		return (isSumXY(num - 17) || isSumXY(num - 43) || isSumXY(num - 43 -17));
 	}
 		
 	public static boolean isInteger(String s)
