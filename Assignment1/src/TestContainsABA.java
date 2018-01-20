@@ -1,37 +1,35 @@
 
-public class TestOddPalindrome {
+public class TestContainsABA {
 
 	public static void main(String[] args) {
 		
 		// Check if the argument is valid when calling this program
 		if (args.length != 1)
 		{
-			System.err.println("Usage: java TestOddPalindrome abba");
+			System.err.println("Usage: java TestContainsABA abaaba");
 			System.exit(1);
 		}
 		
 		String input = args[0];
 		String result = "X = " + input + "\t\t\t Member?\t ";
-		result = (isOddPalindrome(input) ? result + "true" : result + "false");
+		result = (isContainsABA(input) ? result + "true" : result + "false");
 		System.out.println(result);
 	}
 	
-	public static boolean isOddPalindrome(String s)
+	public static boolean isContainsABA(String s)
 	{
-		if (!isValidAlphabet(s))
+		if (s.length() < 3)
 			return false;
 		
-		// Base case 
-		if (s.equals("a") || s.equals("b"))
+		if (!isValidAlphabet(s)) 
+			return false;
+		
+		// Base case
+		if (s.equals("aba"))
 			return true;
 		
-		if (s.charAt(0) == s.charAt(s.length() - 1))
-		{
-			if (s.length() == 2)
-				return true;
-			else
-				return isOddPalindrome(s.substring(1, s.length() - 1));	
-		}
+		if (s.charAt(0) == 'a' || s.charAt(0) == 'b' || s.charAt(s.length() - 1) == 'a' || s.charAt(s.length() - 1) == 'b')
+			return isContainsABA(s.substring(1)) || isContainsABA(s.substring(0, s.length() - 1));
 		
 		return false;
 	}
