@@ -21,7 +21,7 @@ public class TestContainsABA {
 		if (s.length() < 3)
 			return false;
 		
-		if (!isValidAlphabet(s)) 
+		if (!isValidAlphabet(s))
 			return false;
 		
 		// Base case
@@ -33,19 +33,23 @@ public class TestContainsABA {
 		
 		if (s.charAt(0) == 'a' || s.charAt(0) == 'b' || s.charAt(s.length() - 1) == 'a' || s.charAt(s.length() - 1) == 'b')
 			return isContainsABA(s.substring(1)) || isContainsABA(s.substring(0, s.length() - 1));
-		
+	
 		return false;
 	}
 	
 	public static boolean isValidAlphabet(String s)
 	{
-		for (int i = 0; i < s.length(); i++)
+		
+		if (s.equals("a") || s.equals("b"))
+			return true;
+		
+		if (s.length() > 1)
 		{
-			if (s.charAt(i) != 'a' && s.charAt(i) != 'b')
-				return false;
+			if (s.charAt(0) == 'a' || s.charAt(0) == 'b')
+				return isValidAlphabet(s.substring(1));
 		}
 		
-		return true;
+		return false;
 	}
 
 }

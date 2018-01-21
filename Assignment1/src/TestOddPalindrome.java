@@ -17,10 +17,7 @@ public class TestOddPalindrome {
 	}
 	
 	public static boolean isOddPalindrome(String s)
-	{
-		if (!isValidAlphabet(s))
-			return false;
-		
+	{		
 		// Base case 
 		if (s.equals("a") || s.equals("b"))
 			return true;
@@ -29,22 +26,12 @@ public class TestOddPalindrome {
 		{
 			if (s.length() == 2)
 				return true;
-			else
+			
+			if (s.charAt(0) == 'a' || s.charAt(0) == 'b' || s.charAt(s.length() - 1) == 'a' || s.charAt(s.length() - 1) == 'b')
 				return isOddPalindrome(s.substring(1, s.length() - 1));	
 		}
 		
 		return false;
-	}
-	
-	public static boolean isValidAlphabet(String s)
-	{
-		for (int i = 0; i < s.length(); i++)
-		{
-			if (s.charAt(i) != 'a' && s.charAt(i) != 'b')
-				return false;
-		}
-		
-		return true;
 	}
 
 }
