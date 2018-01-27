@@ -56,11 +56,7 @@ public class TestABPlus {
 		if (s.charAt(s.length() - 1) == '+' && s.length() == 1)
 			return false;
 		
-		if (s.charAt(0) == 'a' || s.charAt(0) == 'b')
-			valid = true;
-		
-		if (s.charAt(0) == '+')
-			valid = false;
+		valid = (s.charAt(0) == 'a' || s.charAt(0) == 'b') ? true : false;
 		
 		return isABPlus(s.substring(1), valid);			
 	}
