@@ -1,6 +1,22 @@
+//                      Lili Peng
+//                     CS 4110 - 7 am
+//                      Assignment #1
+//                      Dr. Rague
+//                      Due: 01/26/18
+//                      Version: 1.0
+// --------------------------------------------------------------------
+// This program validates whether a number is a power of 2
+// --------------------------------------------------------------------
 
+// -----------------------------------------------------------------
+// This class represents the test class for validating if a 
+// number is a power of 2.
+// ----------------------------------------------------------
 public class TestPowerOf2 {
 
+	// -----------------------------------------------------------------
+	// This is the main function that executes the program
+	// ----------------------------------------------------------
 	public static void main(String[] args) {
 
 		// Check if the argument is valid when calling this program
@@ -18,6 +34,10 @@ public class TestPowerOf2 {
 
 	}
 	
+	// -----------------------------------------------------------------------------
+	// This is the recursive function that checks whether a number is a power of 2,
+	// it will return true if the number is power of 2 otherwise false
+	// -----------------------------------------------------------------------------
 	public static boolean isPowerOf2(double n) 
 	{	
 		// Check whether n is a whole number
@@ -30,6 +50,9 @@ public class TestPowerOf2 {
 		return isPowerOf2((double)n / 2);
 	}
 	
+	// -----------------------------------------------------------------------------
+	// This is function checks whether the user input is a number
+	// -----------------------------------------------------------------------------
 	public static boolean isNumber(String s)
 	{
 		try 

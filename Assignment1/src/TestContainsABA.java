@@ -1,21 +1,43 @@
+//                      Lili Peng
+//                     CS 4110 - 7 am
+//                      Assignment #1
+//                      Dr. Rague
+//                      Due: 01/26/18
+//                      Version: 1.0
+// -----------------------------------------------------------------
+// This program validates whether a string contains substring aba 
+// and is composed of valid alphabets
+// -----------------------------------------------------------------
 
+// -----------------------------------------------------------------
+// This class represents the test class for validating if a 
+// string contains aba with valid alphabet
+// ----------------------------------------------------------
 public class TestContainsABA {
 
+	// -----------------------------------------------------------------
+	// This is the main function that executes the program
+	// ----------------------------------------------------------
 	public static void main(String[] args) {
 		
-		// Check if the argument is valid when calling this program
+		// Check if there is one argument being passed in when calling this program
 		if (args.length != 1)
 		{
 			System.err.println("Usage: java TestContainsABA abaaba");
 			System.exit(1);
 		}
 		
+		// Compute and print the result in console
 		String input = args[0];
 		String result = "X = " + input + "\t\t\t Member?\t ";
 		result = (isContainsABA(input, false) ? result + "true" : result + "false");
 		System.out.println(result);
 	}
 	
+	// -----------------------------------------------------------------
+	// This is the recursive function that checks whether a string
+	// contains aba
+	// ----------------------------------------------------------
 	public static boolean isContainsABA(String s, boolean contains)
 	{	
 		// Verify that all the characters in the string are in alphabet
@@ -36,6 +58,9 @@ public class TestContainsABA {
 		}
 	}
 	
+	// ---------------------------------------------------------------------------
+	// This recursive function checks whether a string contains invalid alphabet
+	// --------------------------------------------------------------------------
 	public static boolean isValidAlphabet(String s)
 	{
 		
