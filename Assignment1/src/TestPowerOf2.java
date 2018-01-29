@@ -40,12 +40,12 @@ public class TestPowerOf2 {
 	// -----------------------------------------------------------------------------
 	public static boolean isPowerOf2(double n) 
 	{	
-		// Check whether n is a whole number
-		if (Math.floor(n) != n)
-			return false;
 		
 		if (n == 1)
 			return true;
+		
+		if (n < 1)
+			return false;
 		
 		return isPowerOf2((double)n / 2);
 	}

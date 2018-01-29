@@ -46,8 +46,10 @@ public class TestOddPalindrome {
 		
 		if (s.charAt(0) == s.charAt(s.length() - 1))
 		{
-			if (s.length() == 2)
+			if (s.length() == 1)
 				return true;
+			else if (s.length() == 2)
+				return false; // This is an odd palindrome - there should not be two characters left
 			
 			if (s.charAt(0) == 'a' || s.charAt(0) == 'b' || s.charAt(s.length() - 1) == 'a' || s.charAt(s.length() - 1) == 'b')
 				return isOddPalindrome(s.substring(1, s.length() - 1));	

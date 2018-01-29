@@ -42,10 +42,10 @@ public class TestSumXY {
 		if (num < 17)
 			return false;
 		
-		if (num == 17 || num == 43 || num == 43 + 17)
+		if (num == 17 || num == 43)
 			return true;
 		
-		return (isSumXY(num - 17) || isSumXY(num - 43) || isSumXY(num - 43 -17));
+		return (isSumXY(num - 17) || isSumXY(num - 43));
 	}
 		
 	// ----------------------------------------------------------------------
