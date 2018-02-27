@@ -56,9 +56,9 @@ public class CFG
 			return false;
 
 		// iterate through all the production rules
-		for (int j = 0; j < Code.length; j++)
+		for (int i = 0; i < Code.length; i++)
 		{
-			String pr = Code[j];
+			String pr = Code[i];
 			String nt = String.valueOf(pr.charAt(0));
 			String rhs = pr.substring(3);
 			
@@ -69,10 +69,14 @@ public class CFG
 			{	
 				// construct a new string that substitute the nonterminal within working string
 				String nwk = wkString.replaceFirst(Pattern.quote(nt), rhs);
-				return processData(inString, nwk);
+				
+				if (processData(inString, nwk))
+					return true;
+				else
+					continue;
 			}
 			else
-				return false; // when no nonterminals exist in working string
+				continue;
 		}
 		
 		return false;
