@@ -8,6 +8,7 @@
 // CFG class is used for determining whether a string is in the language
 // represented by the Context Free Grammar that this class represented. 
 // --------------------------------------------------------------------
+import java.util.regex.Pattern;
 
 public class CFG 
 {
@@ -67,14 +68,11 @@ public class CFG
 			if (index != -1)
 			{	
 				// construct a new string that substitute the nonterminal within working string
-				String nwk = wkString.substring(0, index) + rhs + wkString.substring(index + 1); 
-				if (processData(inString, nwk))
-					return true;
-				else
-					continue;
+				String nwk = wkString.replaceFirst(Pattern.quote(nt), rhs);
+				return processData(inString, nwk);
 			}
 			else
-				continue;
+				return false; // when no nonterminals exist in working string
 		}
 		
 		return false;
