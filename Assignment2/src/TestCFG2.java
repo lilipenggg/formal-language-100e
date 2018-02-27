@@ -15,7 +15,7 @@ public class TestCFG2
 	{
 		// Language: strings of length 1 or greater that do not 
 		// contain the substring aa
-		String[] C = { "S=>aXb", "S=>ab", "X=>aaXbb", "X=>aabb" };
+		String[] C = { "S=>aX", "S=>a", "S=>bS", "S=>b", "X=>bS", "X=>b" };
 
 		String inString, startWkString;
 		boolean accept1;
@@ -26,7 +26,6 @@ public class TestCFG2
 			char[] startNonTerm = new char[1];
 			startNonTerm[0] = CFG1.getStartNT();
 			startWkString = new String(startNonTerm);
-			System.out.println(" Start working string:" + startWkString);
 			accept1 = CFG1.processData(inString, startWkString);
 			System.out.println("  Accept String?  " + accept1);
 		}
