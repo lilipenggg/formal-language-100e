@@ -5,22 +5,19 @@
 //                      Due: 03/02/18
 //                      Version: 1.0
 // -----------------------------------------------------------------------
-// TestCFG2 is a test program that accepts language that contains words
-// of length 1 or greater that do not contain the substring aa
+// TestCFG3 is a test program that accepts language that contains strings
+// that contain exactly one b, have 2N a's (N >= 0, N is an integer) before
+// the b, and 2N+1 a's after the b.
 // -----------------------------------------------------------------------
-public class TestCFG2
+public class TestCFG3
 {
 
 	public static void main(String[] args) 
 	{
 		// Language: strings of length 1 or greater that do not 
 		// contain the substring aa
-		String[] C = { "S=>aX", 
-					   "S=>a", 
-					   "S=>bS", 
-					   "S=>b", 
-					   "X=>bS", 
-					   "X=>b" };
+		String[] C = { "S=>ba", 
+					   "S=>aaSaa" };
 
 		String inString, startWkString;
 		boolean accept1;

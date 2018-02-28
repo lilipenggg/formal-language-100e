@@ -5,22 +5,22 @@
 //                      Due: 03/02/18
 //                      Version: 1.0
 // -----------------------------------------------------------------------
-// TestCFG2 is a test program that accepts language that contains words
-// of length 1 or greater that do not contain the substring aa
+// TestCFG4 is a test program that accepts language that contains words 
+// consisting of all strings that start with z, followed by N x's (N >= 0),
+// followed by twice as many y's, and ending with z.
 // -----------------------------------------------------------------------
-public class TestCFG2
+public class TestCFG4
 {
 
 	public static void main(String[] args) 
 	{
-		// Language: strings of length 1 or greater that do not 
-		// contain the substring aa
-		String[] C = { "S=>aX", 
-					   "S=>a", 
-					   "S=>bS", 
-					   "S=>b", 
-					   "X=>bS", 
-					   "X=>b" };
+		// Language: strings that start with z, followed
+		// by N x's (N >= 0), followed by twice as many y's,
+		// and ending with z.
+		String[] C = { "S=>zXz",
+					   "S=>zz",
+					   "X=>xXyy",
+					   "X=>xyy" };
 
 		String inString, startWkString;
 		boolean accept1;

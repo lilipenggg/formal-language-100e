@@ -15,7 +15,10 @@ public class TestCFG1
 	{
 		// Language: strings that contain odd number of a's followed by the
 		// same number of b's.
-		String[] C = { "S=>aXb", "S=>ab", "X=>aaXbb", "X=>aabb" };
+		String[] C = { "S=>aXb", 
+					   "S=>ab", 
+					   "X=>aaXbb", 
+					   "X=>aabb" };
 
 		String inString, startWkString;
 		boolean accept1;
