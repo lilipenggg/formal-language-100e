@@ -24,14 +24,14 @@ public class TestCFG4
 
 		String inString, startWkString;
 		boolean accept1;
-		CFG CFG1 = new CFG(C);
+		CFG CFG4 = new CFG(C);
 		if (args.length >= 1) {
 			// Input string is command line parameter
 			inString = args[0];
 			char[] startNonTerm = new char[1];
-			startNonTerm[0] = CFG1.getStartNT();
+			startNonTerm[0] = CFG4.getStartNT();
 			startWkString = new String(startNonTerm);
-			accept1 = CFG1.processData(inString, startWkString);
+			accept1 = CFG4.processData(inString, startWkString);
 			System.out.println("  Accept String?  " + accept1);
 		}
 	} // end main

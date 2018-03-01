@@ -14,21 +14,22 @@ public class TestCFG3
 
 	public static void main(String[] args) 
 	{
-		// Language: strings of length 1 or greater that do not 
-		// contain the substring aa
+		// Language: strings  that contains exactly one b,
+		// have 2N a's (N >= 0, integer) before the b, and 
+		// 2N+1 a's after the b
 		String[] C = { "S=>ba", 
 					   "S=>aaSaa" };
 
 		String inString, startWkString;
 		boolean accept1;
-		CFG CFG1 = new CFG(C);
+		CFG CFG3 = new CFG(C);
 		if (args.length >= 1) {
 			// Input string is command line parameter
 			inString = args[0];
 			char[] startNonTerm = new char[1];
-			startNonTerm[0] = CFG1.getStartNT();
+			startNonTerm[0] = CFG3.getStartNT();
 			startWkString = new String(startNonTerm);
-			accept1 = CFG1.processData(inString, startWkString);
+			accept1 = CFG3.processData(inString, startWkString);
 			System.out.println("  Accept String?  " + accept1);
 		}
 	} // end main
