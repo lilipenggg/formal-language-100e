@@ -66,7 +66,10 @@ public class TM
 		String statement = "";
 		for (String c: code)
 		{
-			if (cstate == Integer.valueOf(c.charAt(0)) && input == c.charAt(2))
+			int state = Integer.parseInt(String.valueOf(c.charAt(0)));
+			char rc = c.charAt(2);
+			
+			if (cstate == state && input == rc)
 			{
 				statement = c;
 			}
@@ -75,11 +78,12 @@ public class TM
 		if (!statement.isEmpty())
 		{
 			// Write new character at current tape head position
-			 tape = tape.substring(0, tapePos) + statement.charAt(5) + tape.substring(tapePos + 1);
+			 setTape(tape.substring(0, tapePos) + statement.charAt(5) + tape.substring(tapePos + 1));
 			 
 			 // Move the tape head to left or right accordingly
+			 int ci = statement.lastIndexOf(',');
 			 char direction = statement.charAt(7);
-			 int next = Integer.valueOf(statement.charAt(9));
+			 int next = Integer.parseInt(String.valueOf(statement.charAt(9)));
 			 if (direction == 'R')
 			 {
 				 tapePos++;
@@ -112,7 +116,7 @@ public class TM
 	public boolean processData(String input)
 	{
 		// Place input string onto the tape
-		tape = input + tape;
+		setTape(input + "#");
 		
 		while (stateType[cstate] == 'R')
 		{
