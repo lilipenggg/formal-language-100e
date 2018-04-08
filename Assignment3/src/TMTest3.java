@@ -3,7 +3,7 @@ public class TMTest3
 {
   public static void main(String[] args)
   {
-    // Language: strings that contain N b's (N > 0, N is an integer) followed by N+1 a's
+    // Language: strings that consisting of all odd-length palindrome
     String[] C  =
       {"0,x=>#,R,1",
        "1,y=>y,R,1",
