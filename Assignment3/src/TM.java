@@ -72,6 +72,7 @@ public class TM
 			if (cstate == state && input == rc)
 			{
 				statement = c;
+				break;
 			}
 		}
 		
@@ -81,7 +82,6 @@ public class TM
 			 setTape(tape.substring(0, tapePos) + statement.charAt(5) + tape.substring(tapePos + 1));
 			 
 			 // Move the tape head to left or right accordingly
-			 int ci = statement.lastIndexOf(',');
 			 char direction = statement.charAt(7);
 			 int next = Integer.parseInt(String.valueOf(statement.charAt(9)));
 			 if (direction == 'R')
