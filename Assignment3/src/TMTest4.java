@@ -24,7 +24,7 @@ public class TMTest4
        "7,p=>p,R,4",
        "6,p=>p,R,8",
        "8,Q=>Q,R,8",
-       "8,#=>#,R,9",};
+       "8,#=>#,R,9"};
     char[] ST = {'R','R','R','R','R','R','R','R','R','H'};
 
     String inString;
